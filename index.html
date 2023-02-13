@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Pixabay image Search</h1>
+    </header>
+
+    <form class="search_pictuers">
+        <input type="text" id="search" placeholder="Search for photos">
+        <select name="color_choise" id="color">
+            <option value="">any color</option>
+            <option value="grayscale">grayscale</option>
+            <option value="transparent">transparent</option>
+            <option value="red">red</option>
+            <option value="orange">orange</option>
+            <option value="yellow">yellow</option>
+            <option value="green">green</option>
+            <option value="turquoise">turquoise</option>
+            <option value="lilac">lilac</option>
+            <option value="pink">pink</option>
+            <option value="white">white</option>
+            <option value="gray">gray</option>
+            <option value="black">black</option>
+            <option value="brown">brown</option>
+        </select>
+        <button type="submit" id="submit">Submit</button>
+    </form>
+
+    <section>
+        <ul id="respond">
+        </ul>
+    </section>
+
+    <form class=next_previous>
+        <button id="previous" onclick="PreviousPage(url, -1)">Previous</button>
+        <button id="next" onclick="NextPage(url)">Next</button>
+    </form>
+
+
+</body>
+
+</html>

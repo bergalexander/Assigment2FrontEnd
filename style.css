@@ -1,0 +1,54 @@
+html {
+    background-image: url('photographer.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+h1 {
+    font-style: italic;
+    text-align: center;
+}
+
+body {
+    max-width: 45rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#search,
+#submit,
+#color {
+    font-style: italic;
+}
+
+.search_pictuers {
+    display: grid;
+    grid-template:
+        "a b c" / 1fr 0.5fr 0.4fr;
+    gap: 0.7rem;
+}
+
+ul {
+    display: grid;
+    grid-template:
+        "a b c d" / 1fr 1fr 1fr 1fr;
+    max-height: auto;
+    gap: 1rem;
+
+}
+
+img{
+    height: 150px;
+    width: 150px;
+}
+
+li {
+    list-style: none;
+}
+
+#previous,
+#next {
+    display: none;
+}
