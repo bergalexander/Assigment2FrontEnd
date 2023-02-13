@@ -53,8 +53,8 @@ function DisplaySearch(json) {
     picAuthor.classList.add("mystyle");
 
     listPic.src = pic.previewURL;
-    picTags = pic.tags;
-    picAuthor = `Taken by ${pic.user}`;
+    picTags.innerText = pic.tags;
+    picAuthor.innerText = `Taken by ${pic.user}`;
     newElement.append(listPic, picTags, picAuthor);
     list.append(newElement);
   }

@@ -45,9 +45,13 @@ body {
 
 ul {
   display: grid;
-  grid-template: "a b c d" / 1fr 1fr 1fr 1fr;
-  max-height: auto;
-  gap: 1rem;
+  grid-template-rows: repeat(auto-fill, 150px);
+  grid-template-columns: repeat(auto-fill, 150px);
+  grid-gap: 2rem;
+  margin: auto;
+  margin-top: 2rem;
+  justify-content: center;
+  padding: 0;
 }
 
 img {
