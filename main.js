@@ -11,6 +11,11 @@ form.onsubmit = async event => {
 
     RemoveOldSearch();
 
+    jsonData = await FetchData(form, url);
+    DisplayData(jsonData);
+}
+
+async function FetchData(form, url){
     let text = form.search.value;
     let color = form.color_choise.value;
 
@@ -25,9 +30,7 @@ form.onsubmit = async event => {
 
     let response = await fetch(url);
     //Alla bilder
-    let json = await response.json();
-
-    return json;
+    return await response.json();
 }
 
 function DisplayData(json){
@@ -61,7 +64,10 @@ function RemoveOldSearch() {
     }
 }
 
-nextPage.addEventListener("click", ChangePage(url, 1));
+nextPage.addEventListener("click", function(){
+    ChangePage(url, 1);
+});
+
 async function ChangePage(url, pageChange){
 
     RemovePages();
