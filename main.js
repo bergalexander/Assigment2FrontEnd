@@ -10,7 +10,7 @@ form.onsubmit = async event => {
 
     event.preventDefault();
 
-    // RemoveOldSearch();
+    RemoveOldSearch();
 
     let text = form.search.value;
     let color = form.color_choise.value;
