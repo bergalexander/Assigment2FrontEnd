@@ -8,17 +8,9 @@ let page = 1;
 form.onsubmit = async event => {
 
     event.preventDefault();
-    
-    // RemoveOldSearch();
-    
-    let jsonData = await FetchData(form, url);
 
-   DisplayData(jsonData);
+    RemoveOldSearch();
 
-    ShowPageBtns();
-}
-
-async function FetchData(form, url){
     let text = form.search.value;
     let color = form.color_choise.value;
 
