@@ -2,6 +2,7 @@ let form = document.querySelector(".search_pictuers");
 let list = document.querySelector("#respond");
 let nextPage = document.querySelector("#next");
 let previousPage = document.querySelector("#previous");
+let nextPageDiv = document.querySelector(".next_previous");
 
 let url = "https://pixabay.com/api/?key=33506024-4219960d4e66c6a76dff1b306&q=";
 let page = 1;
@@ -23,7 +24,7 @@ form.onsubmit = async (event) => {
 async function FetchData(form) {
   url = "https://pixabay.com/api/?key=33506024-4219960d4e66c6a76dff1b306&q=";
   page = 1;
-  
+
   let text = form.search.value;
   let color = form.color_choise.value;
 
@@ -48,6 +49,9 @@ function DisplaySearch(json) {
     let picTags = document.createElement("h3");
     let picAuthor = document.createElement("p");
 
+    picTags.style.color = "white";
+    picAuthor.classList.add("mystyle");
+
     listPic.src = pic.previewURL;
     picTags = pic.tags;
     picAuthor = `Taken by ${pic.user}`;
@@ -56,8 +60,7 @@ function DisplaySearch(json) {
   }
 }
 function ShowPageBtns() {
-  nextPage.style.display = "inline-block";
-  previousPage.style.display = "inline-block";
+    nextPageDiv.style.display = "inline-block";
 }
 
 function RemoveOldSearch() {
@@ -85,7 +88,7 @@ async function ChangePage(pageChange) {
   RemoveOldSearch();
 
   DisplaySearch(jsonData);
-  totalPages = GetTotalPages(jsonData);
+  let totalPages = GetTotalPages(jsonData);
 
   DisableBtns(totalPages);
 }
@@ -96,6 +99,7 @@ async function FetchNewPage(url) {
   return await response1.json();
 }
 
+//Removes the pages from the URL, enabling us to set new page.
 function RemovePages() {
   let count = 0;
 
@@ -112,13 +116,13 @@ function RemovePages() {
   url = url.substring(0, url.length - count);
 }
 
-function DisableBtns(totalPagees) {
+function DisableBtns(totalPages) {
   if (page == 1) {
     previousPage.disabled = true;
   } else {
     previousPage.disabled = false;
   }
-  if (page == lastPage) {
+  if (page == totalPages) {
     nextPage.disabled = true;
   } else {
     nextPage.disabled = false;

@@ -1,54 +1,75 @@
 html {
-    background-image: url('photographer.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-
+  background-image: url("photographer.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: 100% auto;
+  background-color: black;
+  background-attachment: fixed;
+  text-align: center;
 }
 
 h1 {
-    font-style: italic;
-    text-align: center;
+  font-style: italic;
 }
 
 body {
-    max-width: 45rem;
-    margin-left: auto;
-    margin-right: auto;
+  max-width: 45rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #search,
 #submit,
 #color {
-    font-style: italic;
+  font-style: italic;
+  height: 2.5rem;
+  border-radius: 3px;
+  font-family: "Sofia", sans-serif;
+  font-weight: 600;
+  font-size: large;
+  padding: 5px;
+}
+#search{
+    max-width: 200px;
+    min-width: 40px;
+    position:relative;
 }
 
 .search_pictuers {
-    display: grid;
-    grid-template:
-        "a b c" / 1fr 0.5fr 0.4fr;
-    gap: 0.7rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  max-width: 600px;
+  margin: auto;
 }
 
 ul {
-    display: grid;
-    grid-template:
-        "a b c d" / 1fr 1fr 1fr 1fr;
-    max-height: auto;
-    gap: 1rem;
-
+  display: grid;
+  grid-template: "a b c d" / 1fr 1fr 1fr 1fr;
+  max-height: auto;
+  gap: 1rem;
 }
 
-img{
-    height: 150px;
-    width: 150px;
+img {
+  height: 150px;
+  width: 150px;
 }
 
 li {
-    list-style: none;
+  list-style: none;
 }
 
-#previous,
-#next {
-    display: none;
+.next_previous {
+  display: none;
+  position: absolute;
+  bottom: 5rem;
+}
+.next_previous > * {
+  font-style: italic;
+  height: 2.5rem;
+  border-radius: 3px;
+  font-family: "Sofia", sans-serif;
+  font-weight: 600;
+  font-size: large;
+  padding: 5px;
 }
