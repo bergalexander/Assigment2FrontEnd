@@ -50,6 +50,8 @@ function DisplaySearch(json) {
     let picAuthor = document.createElement("p");
 
     picTags.style.color = "white";
+    picAuthor.style.color = "white";
+
     picAuthor.classList.add("mystyle");
 
     listPic.src = pic.previewURL;
@@ -122,7 +124,7 @@ function DisableBtns(totalPages) {
   } else {
     previousPage.disabled = false;
   }
-  if (page == totalPages) {
+  if (page == totalPages || totalPages == 0) {
     nextPage.disabled = true;
   } else {
     nextPage.disabled = false;
@@ -133,31 +135,3 @@ function GetTotalPages(jsonData) {
   let pages = jsonData.totalHits;
   return Math.ceil(pages / 10);
 }
-
-// nextPage.onclick = async event => {
-
-//     function NextPage(url, pageChange) {
-//         page++;
-
-//         url = url + '&page=' + page;
-//     }
-//     let response = await fetch(url);
-//     //Alla bilder
-//     let json = await response.json();
-
-//     for (let pic of json.hits) {
-
-//         let newElement = document.createElement("li");
-
-//         let listPic = document.createElement('img');
-//         let picTags = document.createElement("h3");
-//         let picAuthor = document.createElement("p");
-
-//         listPic.src = pic.previewURL;
-//         picTags = pic.tags;
-//         picAuthor = `Taken by ${pic.user}`; newElement.append(listPic, picTags, picAuthor)
-//         list.append(newElement);
-
-//     }
-
-// }

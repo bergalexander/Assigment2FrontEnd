@@ -29,10 +29,9 @@ body {
   font-size: large;
   padding: 5px;
 }
-#search{
-    max-width: 200px;
-    min-width: 40px;
-    position:relative;
+#search {
+  max-width: 200px;
+  min-width: 40px;
 }
 
 .search_pictuers {
@@ -45,7 +44,7 @@ body {
 
 ul {
   display: grid;
-  grid-template-rows: repeat(auto-fill, 150px);
+  grid-template-rows: repeat(auto-fill, auto);
   grid-template-columns: repeat(auto-fill, 150px);
   grid-gap: 2rem;
   margin: auto;
@@ -65,7 +64,6 @@ li {
 
 .next_previous {
   display: none;
-  position: absolute;
   bottom: 5rem;
 }
 .next_previous > * {
