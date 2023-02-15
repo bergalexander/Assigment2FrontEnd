@@ -10,6 +10,7 @@ let page = 1;
 form.onsubmit = async (event) => {
   event.preventDefault();
 
+  //Removes old search from view.
   RemoveOldSearch();
 
   jsonData = await FetchData(form);
@@ -17,10 +18,12 @@ form.onsubmit = async (event) => {
   DisplaySearch(jsonData);
   let totalPages = GetTotalPages(jsonData);
 
+  //Displaying next and previous buttons and disabling them if required.
   ShowPageBtns();
   DisableBtns(totalPages);
 };
 
+//Resetting the search url so that we get a new fresh search.
 async function FetchData(form) {
   url = "https://pixabay.com/api/?key=33506024-4219960d4e66c6a76dff1b306&q=";
   page = 1;
@@ -37,7 +40,7 @@ async function FetchData(form) {
   url += `&per_page=10&page=${page}`;
 
   let response = await fetch(url);
-  //Alla bilder
+
   return await response.json();
 }
 
@@ -52,17 +55,17 @@ function DisplaySearch(json) {
     picTags.style.color = "white";
     picAuthor.style.color = "white";
 
-    picAuthor.classList.add("mystyle");
-
     listPic.src = pic.previewURL;
-    picTags.innerText = pic.tags;
-    picAuthor.innerText = `Taken by ${pic.user}`;
+    picTags.textContent = pic.tags;
+    picAuthor.textContent = `Taken by ${pic.user}`;
+
     newElement.append(listPic, picTags, picAuthor);
     list.append(newElement);
   }
 }
+
 function ShowPageBtns() {
-    nextPageDiv.style.display = "block";
+  nextPageDiv.style.display = "block";
 }
 
 function RemoveOldSearch() {
@@ -79,6 +82,7 @@ previousPage.addEventListener("click", function () {
   ChangePage(-1);
 });
 
+//Changes the page depending on button clicked. Next adds a page and previous removes one.
 async function ChangePage(pageChange) {
   event.preventDefault();
   RemovePages();
@@ -94,9 +98,10 @@ async function ChangePage(pageChange) {
 
   DisableBtns(totalPages);
 }
+
+//Fetches the new page from current search.
 async function FetchNewPage(url) {
   let response1 = await fetch(url);
-  //Alla bilder
 
   return await response1.json();
 }
