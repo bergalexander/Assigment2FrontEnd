@@ -62,7 +62,7 @@ function DisplaySearch(json) {
   }
 }
 function ShowPageBtns() {
-    nextPageDiv.style.display = "inline-block";
+    nextPageDiv.style.display = "block";
 }
 
 function RemoveOldSearch() {
@@ -105,7 +105,7 @@ async function FetchNewPage(url) {
 function RemovePages() {
   let count = 0;
 
-  for (let index = url.length - 1; index > 0; index++) {
+  for (let index = url.length - 1; index > 0; index--) {
     let number = parseInt(url[index]);
 
     if (!isNaN(number)) {
