@@ -90,3 +90,14 @@ li {
   font-size: large;
   padding: 5px;
 }
+
+h3{
+  font-style: italic;
+  font-size: 15px;
+  margin-bottom: 0px;
+}
+p{
+  font-style: italic;
+  font-size: 13px;
+  margin-top: 2px;
+}
