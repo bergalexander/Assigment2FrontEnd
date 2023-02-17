@@ -67,6 +67,13 @@ ul li:nth-child(10) {
     grid-area: 4/2;
   }
 }
+
+@media(max-width:438px)
+{
+  ul li:nth-child(9) {
+    grid-area: auto;
+  }
+}
 img {
   height: 200px;
   width: 200px;
